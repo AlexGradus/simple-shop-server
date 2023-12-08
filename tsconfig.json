@@ -9,7 +9,14 @@
     "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "paths": {
+      "app/*": ["./src/app/*"],
+      "libs/*": ["./src/libs/*"],
+      "domain/*": ["./src/domain/*"],
+      "config/*": ["./src/config/*"],
+      "enums/*": ["./src/enums/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
