@@ -1,18 +1,7 @@
-import {
-  Body,
-  Controller,
-  Get,
-  HttpCode,
-  Param,
-  Patch,
-  Put,
-  UsePipes,
-  ValidationPipe,
-} from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { UserService } from './user.service';
 import { Auth } from 'app/auth/decorators/auth.decorator';
-import { CurrentUser } from 'app/auth/decorators/user.decorator';
-import { UserDto } from 'domain/user.dto';
+import { CurrentUser } from './decorators/user.decorator';
 
 @Controller('users')
 export class UserController {
@@ -22,23 +11,5 @@ export class UserController {
   @Get('profile')
   async getProfile(@CurrentUser('id') id: number) {
     return this.userService.byId(id);
-  }
-
-  @UsePipes(new ValidationPipe())
-  @Auth()
-  @HttpCode(200)
-  @Put('profile')
-  async accessToken(@CurrentUser('id') id: number, @Body() dto: UserDto) {
-    return this.userService.updateProfile(id, dto);
-  }
-
-  @Auth()
-  @HttpCode(200)
-  @Patch('profile/favorities/:productId')
-  async toggleFavorite(
-    @Param('productId') productId: string,
-    @CurrentUser('id') id: number,
-  ) {
-    return this.userService.toggleFavorite(id, productId);
   }
 }
