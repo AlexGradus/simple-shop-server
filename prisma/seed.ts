@@ -14,6 +14,7 @@ const createProducts = async (quantity: number) => {
         description: faker.commerce.productDescription(),
         price: parseInt(faker.commerce.price()),
         images: faker.image.url(),
+        quantity: parseInt(faker.commerce.price()),
       },
     });
     products.push(product);

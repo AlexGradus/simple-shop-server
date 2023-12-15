@@ -27,6 +27,7 @@ model Product {
   description String
   price       Int
   images      String
+  quantity    Int
   orderItems  OrderItem[]
 }
 

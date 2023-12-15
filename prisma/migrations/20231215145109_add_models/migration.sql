@@ -24,6 +24,7 @@ CREATE TABLE "Product" (
     "description" TEXT NOT NULL,
     "price" INTEGER NOT NULL,
     "images" TEXT NOT NULL,
+    "quantity" INTEGER NOT NULL,
 
     CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );
