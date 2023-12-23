@@ -6,6 +6,7 @@ export class AuthDto {
   @MinLength(6, {
     message: 'Password at least 6 characters ',
   })
+ 
   @IsString()
   password: string;
 }
