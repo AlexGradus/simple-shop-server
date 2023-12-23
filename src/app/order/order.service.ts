@@ -48,7 +48,7 @@ export class OrderService {
         data: {
           status: EnumOrderStatus.PENDING,
           user: { connect: { id: userId } },
-          total: total,  // Добавьте значение total здесь
+          total: total,
           items: {
             create: items.map((item) => ({
               quantity: item.quantity,
