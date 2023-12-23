@@ -35,6 +35,7 @@ CREATE TABLE "Order" (
     "created at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated at" TIMESTAMP(3) NOT NULL,
     "status" "EnumOrderStatus" NOT NULL DEFAULT 'PENDING',
+    "total" INTEGER NOT NULL,
     "user_id" INTEGER NOT NULL,
 
     CONSTRAINT "Order_pkey" PRIMARY KEY ("id")

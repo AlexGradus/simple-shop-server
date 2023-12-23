@@ -8,7 +8,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Auth()
-  @Get('profile')
+  @Get('current')
   async getProfile(@CurrentUser('id') id: number) {
     return this.userService.byId(id);
   }

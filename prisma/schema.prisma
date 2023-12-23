@@ -37,10 +37,10 @@ model Order {
   updatedAt DateTime        @updatedAt @map("updated at")
   status    EnumOrderStatus @default(PENDING)
 
-  items OrderItem[]
-
-  user   User @relation(fields: [userId], references: [id])
-  userId Int  @map("user_id")
+  items     OrderItem[]
+  total     Int
+  user      User @relation(fields: [userId], references: [id])
+  userId    Int  @map("user_id")
 }
 
 model OrderItem {
